@@ -1,0 +1,20 @@
+# ============================================================
+# REGLAS FUZZY - CASO ROBOT MOVIL
+# Matriz 4 x 3 = 12 reglas
+# ============================================================
+
+IF distancia_frente IS Critica AND diferencia_sensores IS MasEspacioIzq THEN velocidad_giro IS GiroIzqFuerte
+IF distancia_frente IS Critica AND diferencia_sensores IS Similar THEN velocidad_giro IS GiroIzqFuerte
+IF distancia_frente IS Critica AND diferencia_sensores IS MasEspacioDer THEN velocidad_giro IS GiroDerFuerte
+
+IF distancia_frente IS Corta AND diferencia_sensores IS MasEspacioIzq THEN velocidad_giro IS GiroIzqMedio
+IF distancia_frente IS Corta AND diferencia_sensores IS Similar THEN velocidad_giro IS GiroIzqLeve
+IF distancia_frente IS Corta AND diferencia_sensores IS MasEspacioDer THEN velocidad_giro IS GiroDerMedio
+
+IF distancia_frente IS Media AND diferencia_sensores IS MasEspacioIzq THEN velocidad_giro IS GiroIzqLeve
+IF distancia_frente IS Media AND diferencia_sensores IS Similar THEN velocidad_giro IS Recto
+IF distancia_frente IS Media AND diferencia_sensores IS MasEspacioDer THEN velocidad_giro IS GiroDerLeve
+
+IF distancia_frente IS Larga AND diferencia_sensores IS MasEspacioIzq THEN velocidad_giro IS Recto
+IF distancia_frente IS Larga AND diferencia_sensores IS Similar THEN velocidad_giro IS Recto
+IF distancia_frente IS Larga AND diferencia_sensores IS MasEspacioDer THEN velocidad_giro IS Recto
