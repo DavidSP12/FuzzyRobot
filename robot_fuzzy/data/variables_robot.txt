@@ -1,10 +1,10 @@
 # ============================================================
 # VARIABLES FUZZY - CASO ROBOT MOVIL
-# distancia_frente  : min(sensor_izq, sensor_der)  [0, 300] cm
-# diferencia_sensores: sensor_der - sensor_izq     [-300, 300] cm
-# velocidad_giro    : salida                       [-3, 3] m/s
-#   > 0 => girar a la DERECHA
-#   < 0 => girar a la IZQUIERDA
+# distancia_frente    : min(sensor_izq, sensor_der)  [0, 300] cm
+# diferencia_sensores : sensor_der - sensor_izq      [-300, 300] cm
+# velocidad_giro      : SALIDA angular fuzzy         [-30, 30] grados/s
+#   > 0 => girar a la DERECHA | < 0 => girar a la IZQUIERDA
+# NOTA: velocidad lineal maxima del robot = 3 m/s (parametro fisico externo)
 # ============================================================
 
 VARIABLE;distancia_frente;INPUT;0;300
@@ -18,11 +18,11 @@ SET;MasEspacioIzq;TRAPEZOIDAL;-300;-300;-120;-30
 SET;Similar;TRIANGULAR;-60;0;60
 SET;MasEspacioDer;TRAPEZOIDAL;30;120;300;300
 
-VARIABLE;velocidad_giro;OUTPUT;-3;3
-SET;GiroIzqFuerte;TRAPEZOIDAL;-3.0;-3.0;-2.3;-1.5
-SET;GiroIzqMedio;TRIANGULAR;-2.3;-1.5;-0.6
-SET;GiroIzqLeve;TRIANGULAR;-1.0;-0.5;0.0
-SET;Recto;TRIANGULAR;-0.3;0.0;0.3
-SET;GiroDerLeve;TRIANGULAR;0.0;0.5;1.0
-SET;GiroDerMedio;TRIANGULAR;0.6;1.5;2.3
-SET;GiroDerFuerte;TRAPEZOIDAL;1.5;2.3;3.0;3.0
+VARIABLE;velocidad_giro;OUTPUT;-30;30
+SET;GiroIzqFuerte;TRAPEZOIDAL;-30;-30;-24;-16
+SET;GiroIzqMedio;TRIANGULAR;-24;-15;-6
+SET;GiroIzqLeve;TRIANGULAR;-10;-5;0
+SET;Recto;TRIANGULAR;-3;0;3
+SET;GiroDerLeve;TRIANGULAR;0;5;10
+SET;GiroDerMedio;TRIANGULAR;6;15;24
+SET;GiroDerFuerte;TRAPEZOIDAL;16;24;30;30
