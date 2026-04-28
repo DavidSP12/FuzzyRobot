@@ -1,6 +1,7 @@
+
 # ============================================================
-# REGLAS FUZZY - CASO ROBOT MOVIL
-# Matriz 4 x 3 = 12 reglas
+# REGLAS FUZZY - CASO ROBOT MOVIL  (12 reglas: 4 dist x 3 dif)
+# Salida: velocidad_giro en grados/s [-30, 30]
 # ============================================================
 
 IF distancia_frente IS Critica AND diferencia_sensores IS MasEspacioIzq THEN velocidad_giro IS GiroIzqFuerte
